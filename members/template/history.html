@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HISTORY OF RENT OF {{user.name}}</title>
+</head>
+<body>
+    {%if rents%}
+    <ul>
+        {%for i in rents%}
+        {%if i.given < i.total %}
+        <li>RID: {{i.rid}} RENTED {{i.vno.model}} on {{i.start}} for {{i.nod}} day(s), BILL TOTAL: {{i.total}}, GIVEN:{{i.given}}   [NOT PAID]</li>
+        {%else%}
+        <li>RENTED {{i.vno.model}} on {{i.start}} for {{i.nod}} day(s), BILL TOTAL: {{i.total}},   [PAID]</li>
+        {%endif%}
+        {%endfor%}
+    </ul>
+    {%else%}
+    <P>NO RENTS</P>
+    {%endif%}
+    <P><A href='/account'>go to account</A></P>
+
+</body>
+</html>
