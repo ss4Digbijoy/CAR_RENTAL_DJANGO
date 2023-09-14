@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAY</title>
+</head>
+<body>
+    {%if rents%}
+    <ul>
+        {%for i in rents%}
+        <li>RENTED RID: {{i.rid}} on {{i.start}} for {{i.nod}} day(s), BILL TOTAL: {{i.total}}, GIVEN:{{i.given}}   [NOT PAID]</li>
+        
+        {%endfor%}
+    </ul>
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">Pay</button>
+        </form>
+    {%else%}
+    <P>NO RENTS</P>
+    {%endif%}
+    <P><A href='/account'>go to account</A></P>
+
+</body>
+</html>

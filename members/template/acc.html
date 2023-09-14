@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account of {{user.name}}</title>
+</head>
+<body>
+    <ul> <li><a href='/history'>check your history</a></li>
+         <li><a href='/rent'>rent a car</a></li>
+         <li><a href='/pay'>pay your bills</a></li>
+         <li><a href='/payhistory'>check your payment history</a></li>
+         <li><a href='/logout'>logout</a></li>
+
+    </ul>
+    <p>Hi, {{user.name}}</p>
+    <p>Phone: {{user.phone_number}}</p>
+    <p>Mail: {{user.email}}</p>
+
+</body>
+</html>

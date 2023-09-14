@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAYHISTORY OF {{user.name}}</title>
+</head>
+<body>
+    {%if pays%}
+    <ul>
+    {%for i in pays%}
+     <li>PAID FOR RID: {{i.rid}} RS. {{i.amount}} on {{i.dat}}</li>
+    {%endfor%}
+    </ul>
+    {%else%}
+    <p>NO PAYMENT DONE YET</p>
+    {%endif%}
+    <P><A href='/account'>go to account</A></P>
+</body>
+</html>
