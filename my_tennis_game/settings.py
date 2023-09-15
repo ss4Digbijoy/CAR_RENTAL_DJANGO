@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'my_tennis_game.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'URL': str(os.getenv('POSTGRES_URL')),
-        'NAME': str(os.getenv('PGNAME')),
+        'URL': str(os.getenv('DATABASE_URL')),
+        'NAME': str(os.getenv('PGDATABASE')),
         'USER': str(os.getenv('PGUSER')),
-        'PASSWORD': str(os.getenv('POSTGRES_PASSWORD')),
+        'PASSWORD': str(os.getenv('PGPASSWORD')),
         'HOST': str(os.getenv('PGHOST')),
-        'PORT': str(os.getenv('PGPORT'))
+        'PORT': str(os.getenv('PGPORT')),
     }
 }
 
