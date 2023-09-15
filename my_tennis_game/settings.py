@@ -79,8 +79,13 @@ WSGI_APPLICATION = 'my_tennis_game.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': str(os.getenv('POSTGRES_URL')),
+        'NAME': str(os.getenv('PGNAME')),
+        'USER': str(os.getenv('PGUSER')),
+        'PASSWORD': str(os.getenv('POSTGRES_PASSWORD')),
+        'HOST': str(os.getenv('PGHOST')),
+        'PORT': str(os.getenv('PGPORT'))
     }
 }
 
