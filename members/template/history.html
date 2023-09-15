@@ -12,7 +12,7 @@
         {%if i.given < i.total %}
         <li>RID: {{i.rid}} RENTED {{i.vno.model}} on {{i.start}} for {{i.nod}} day(s), BILL TOTAL: {{i.total}}, GIVEN:{{i.given}}   [NOT PAID]</li>
         {%else%}
-        <li>RENTED {{i.vno.model}} on {{i.start}} for {{i.nod}} day(s), BILL TOTAL: {{i.total}},   [PAID]</li>
+        <li>RID: {{i.rid}} RENTED {{i.vno.model}} on {{i.start}} for {{i.nod}} day(s), BILL TOTAL: {{i.total}},   [PAID]</li>
         {%endif%}
         {%endfor%}
     </ul>
